@@ -17,10 +17,10 @@ def update_gallery_html(iframe_code):
       html_content = f.read()
 
     # Find the insertion point (e.g., a specific div)
-    insertion_point = "</div>"
+    insertion_point = '<div id="gallery"">'
 
     # Insert the iframe code before the insertion point
-    new_html_content = html_content.replace(insertion_point, f"{iframe_code}\n{insertion_point}")
+    new_html_content = html_content.replace(insertion_point, f"{insertion_point}\n{iframe_code}")
 
     with open(gallery_html_path, "w") as f:
       f.write(new_html_content)
